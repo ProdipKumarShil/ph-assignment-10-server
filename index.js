@@ -12,7 +12,9 @@ app.get('/chefs', (req, res) => {
   res.send(chefsJSON)
 })
 
-
+app.get('/chefs/:id', (req, res) => {
+  res.send('hello')
+})
 
 app.listen(port, () => {
   console.log('recipe is cooking in ', port)
