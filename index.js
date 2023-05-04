@@ -15,8 +15,8 @@ app.get('/chefs', (req, res) => {
 
 app.get('/chefs/:id', (req, res) => {
   const id = req.params.id
-  // const selectedChef = singleChefJSON.find(c => c.id == id)
-  return singleChefJSON
+  const selectedChef = singleChefJSON.find(c => c.id == id)
+  res.send(selectedChef)
 
 })
 
