@@ -3,6 +3,7 @@ const app = express()
 const port = 5000
 
 const chefsJSON = require('./data/chefs.json')
+const singleChefJSON = require('./data/singleChefs.json')
 
 app.get('/', (req, res) => {
   res.send('recipe is cooking')
@@ -13,7 +14,10 @@ app.get('/chefs', (req, res) => {
 })
 
 app.get('/chefs/:id', (req, res) => {
-  res.send('hello')
+  const id = req.params.id
+  // const selectedChef = singleChefJSON.find(c => c.id == id)
+  return singleChefJSON
+
 })
 
 app.listen(port, () => {
